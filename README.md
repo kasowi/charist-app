@@ -1,5 +1,7 @@
 # CHARIST
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kasowi_charist-app-backend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kasowi_charist-app-backend)[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kasowi_charist-app-backend&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kasowi_charist-app-backend)
+
 Capstone project for the neue fische Java bootcamp
 by Katharina-Sophie Winkler
 
