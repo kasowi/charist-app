@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/ngos")
 public class NgoController {
 
     private final NgoService ngoService;
