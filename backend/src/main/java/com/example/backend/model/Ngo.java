@@ -16,7 +16,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Ngo {
 
     @Id
-    private String ngoId;
-    private String ngoName;
+    private String id;
+    private String name;
+    private String sdg;
+    private String country;
+    private String city;
 
 }
