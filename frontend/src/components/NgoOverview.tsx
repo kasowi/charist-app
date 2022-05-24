@@ -4,7 +4,7 @@ import NgoCard from "./NgoCard";
 type NgoOverviewProps = {
     ngos : Ngo[]
     addNgo : (newNgo : Omit<Ngo, "id">) => void
-    updateNgo : (updatedNgo : Ngo) => void
+    updateNgo : (id: string, ngoToUpdate: Omit<Ngo, "id">) => void
     deleteNgo : (id : string) => void
 }
 

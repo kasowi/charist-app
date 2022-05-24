@@ -14,16 +14,16 @@ export const getAllNgos: () => Promise<Ngo[]> = () => {
 }
 
 export function getNgoById(id: string) {
-    return axios.get(`/api/ngos/${id}`)
+    return axios.get(NGO_API_URL + id)
         .then(response => response.data)
 }
 
-export const putNgo: (updatedNgo: Ngo) => Promise<Ngo> = (updatedNgo) => {
-    return axios.put("/api/ngos", updatedNgo)
+export const putNgo: (id: string, updatedNgo: Omit<Ngo, "id">) => Promise<Ngo> = (id, updatedNgo) => {
+    return axios.put(NGO_API_URL + id, updatedNgo)
         .then(response => response.data)
 }
 
 export const removeNgo: (id: string) => Promise<void> = (id: string) => {
-    return axios.delete(`/api/ngos/${id}`)
+    return axios.delete(NGO_API_URL + id)
 }
 
