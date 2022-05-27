@@ -13,8 +13,11 @@ public class CreateNgoDto {
 
     private String id;
     private String name;
+    private String description;
     private String sdg;
-    private String country;
+    private String image;
     private String city;
+    private String country;
+    private String region;
 
 }

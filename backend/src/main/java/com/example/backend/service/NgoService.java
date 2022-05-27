@@ -25,10 +25,13 @@ public class NgoService {
     public Ngo addNewNgo(CreateNgoDto ngo) {
         Ngo newNgo = new Ngo();
         newNgo.setName(ngo.getName());
+        newNgo.setDescription(ngo.getDescription());
         newNgo.setId(ngo.getId());
         newNgo.setSdg(ngo.getSdg());
+        newNgo.setImage(ngo.getImage());
         newNgo.setCity(ngo.getCity());
         newNgo.setCountry(ngo.getCountry());
+        newNgo.setRegion(ngo.getRegion());
         return ngoRepo.insert(newNgo);
     }
 
