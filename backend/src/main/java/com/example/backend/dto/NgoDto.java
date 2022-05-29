@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateNgoDto {
+public class NgoDto {
 
-    private String id;
     private String name;
     private String description;
     private String sdg;

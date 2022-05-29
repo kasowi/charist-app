@@ -1,6 +1,6 @@
 package com.example.backend.controller;
 
-import com.example.backend.dto.CreateNgoDto;
+import com.example.backend.dto.NgoDto;
 import com.example.backend.model.Ngo;
 import com.example.backend.service.NgoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +26,17 @@ public class NgoController {
     }
 
     @PostMapping
-    public Ngo addNewNgo (@RequestBody CreateNgoDto newNgo) {
-        return ngoService.addNewNgo(newNgo);
+    public Ngo addNewNgo(@RequestBody NgoDto ngoDto) {
+        return ngoService.addNewNgo(ngoDto);
+    }
+
+    @PutMapping(path="{id}")
+    public Ngo updateNgoById(@PathVariable String id, @RequestBody NgoDto ngoDto) {
+        return ngoService.updateNgoById(id, ngoDto);
     }
 
     @DeleteMapping(path="{id}")
-    public void deleteNgoById (@PathVariable String id) {
+    public void deleteNgoById(@PathVariable String id) {
         ngoService.deleteNgoById(id);
     }
 }

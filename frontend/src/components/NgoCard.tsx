@@ -1,7 +1,7 @@
 import {Ngo} from "../model/Ngo";
 import "./components-css/NgoCard.css";
 import Card from "react-bootstrap/Card";
-import {ListGroup, ListGroupItem} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import location from "./components-css/location.png";
 
 type ngoCardProps = {
@@ -27,7 +27,7 @@ export default function NgoCard({ngo}: ngoCardProps) {
                     <img src={`/sdg-images/${ngo.sdg}.png`} alt={"ngo-sdg"}/>
                 </div>
                 <Card.Body>
-                    <button>Learn more ...</button>
+                    <Button variant="outline-dark">Learn more ...</Button>
                 </Card.Body>
             </Card>
         </div>
