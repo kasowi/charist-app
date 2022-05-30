@@ -18,6 +18,9 @@ public class Ngo {
     @Id
     private String id;
     private String name;
+    private String email;
+    private String url;
+    private String tagline;
     private String description;
     private String sdg;
     private String image;
@@ -26,3 +29,4 @@ public class Ngo {
     private String region;
 
 }
+

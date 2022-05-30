@@ -5,19 +5,25 @@ import "@fontsource/roboto/";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import useNgos from "./hooks/useNgos";
 import ForNgos from "./pages/ForNgos";
 
-function App() {
+export default function App() {
+
+    const {ngos, addNgo, updateNgo, deleteNgo} = useNgos();
 
   return (
       <BrowserRouter>
           <Routes>
-              <Route path ={"/"} element={<Home />}/>
-              <Route path={"/about"} element={<About/>}/>
-              <Route path={"/forngos"} element={<ForNgos/>}/>
+              <Route path ={"/"}
+                     element={<Home ngos={ngos}/>}/>
+              <Route path={"/about"}
+                     element={<About/>}/>
+              <Route path={"/forngos"}
+                     element={<ForNgos
+                     addNgo={addNgo}/>}/>
           </Routes>
       </BrowserRouter>
   )
 }
 
-export default App;

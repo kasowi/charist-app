@@ -20,7 +20,7 @@ export default function NgoCard({ngo}: ngoCardProps) {
                         <div className="ngo-location">
                             <img src={location}/> {ngo.city}, {ngo.country}
                         </div>
-                        {ngo.description}
+                        {ngo.tagline}
                     </Card.Text>
                 </Card.Body>
                 <div className={"sdg-image"}>
@@ -33,3 +33,4 @@ export default function NgoCard({ngo}: ngoCardProps) {
         </div>
     </div>
 }
+

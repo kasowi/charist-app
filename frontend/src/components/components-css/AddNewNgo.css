@@ -1,0 +1,38 @@
+
+fieldset {
+    margin: auto;
+    padding: 1em 2em;
+    max-width: 50%;
+}
+
+legend {
+    padding: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+}
+
+select {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
+
+Button {
+    display: block;
+    margin-top: 20px;
+    min-width: fit-content;
+    font-size: larger;
+}
+
