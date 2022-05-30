@@ -40,3 +40,4 @@ public class NgoController {
         ngoService.deleteNgoById(id);
     }
 }
+

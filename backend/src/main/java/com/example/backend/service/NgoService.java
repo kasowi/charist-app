@@ -26,6 +26,9 @@ public class NgoService {
     public Ngo addNewNgo(NgoDto ngoDto) {
         Ngo newNgo = new Ngo();
         newNgo.setName(ngoDto.getName());
+        newNgo.setEmail(ngoDto.getEmail());
+        newNgo.setUrl(ngoDto.getUrl());
+        newNgo.setTagline(ngoDto.getTagline());
         newNgo.setDescription(ngoDto.getDescription());
         newNgo.setSdg(ngoDto.getSdg());
         newNgo.setImage(ngoDto.getImage());
@@ -39,6 +42,9 @@ public class NgoService {
         Ngo updatedNgo = ngoRepo.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("NGO with ID " + id + " was not found!"));
         updatedNgo.setName(ngoDto.getName());
+        updatedNgo.setEmail(ngoDto.getEmail());
+        updatedNgo.setUrl(ngoDto.getUrl());
+        updatedNgo.setTagline(ngoDto.getTagline());
         updatedNgo.setDescription(ngoDto.getDescription());
         updatedNgo.setSdg(ngoDto.getSdg());
         updatedNgo.setImage(ngoDto.getImage());
@@ -52,3 +58,4 @@ public class NgoService {
         ngoRepo.deleteById(id);
     }
 }
+

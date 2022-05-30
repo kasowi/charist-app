@@ -53,3 +53,12 @@ h4 {
     font-weight: bold;
     font-size: larger;
 }
+
+.NgoHeader input {
+    width: 30%;
+}
+
+.NgoTabFilter {
+    font-size: initial;
+}
+

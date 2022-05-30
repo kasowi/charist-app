@@ -12,6 +12,9 @@ import lombok.NoArgsConstructor;
 public class NgoDto {
 
     private String name;
+    private String email;
+    private String url;
+    private String tagline;
     private String description;
     private String sdg;
     private String image;
@@ -20,3 +23,4 @@ public class NgoDto {
     private String region;
 
 }
+

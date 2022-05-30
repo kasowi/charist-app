@@ -41,3 +41,4 @@ export default function useNgos() {
     return {ngos, addNgo, deleteNgo, updateNgo}
 
 }
+
