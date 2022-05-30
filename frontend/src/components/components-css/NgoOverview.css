@@ -1,0 +1,55 @@
+.NgoHeader {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.NgoHeader .headline {
+    align-self: center;
+}
+
+.NgoHeader .searchform {
+    align-self: end;
+}
+
+.NgoBoard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+p {
+    color: #1A281F;
+    font-family: Roboto, sans-serif;
+    font-size: initial;
+}
+
+h1 {
+    font-family: Raleway, "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+h2 {
+    font-family: Raleway, "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+h3 {
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+h4 {
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}

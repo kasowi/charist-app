@@ -9,12 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateNgoDto {
+public class NgoDto {
 
-    private String id;
     private String name;
+    private String description;
     private String sdg;
-    private String country;
+    private String image;
     private String city;
+    private String country;
+    private String region;
 
 }

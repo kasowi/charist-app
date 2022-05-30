@@ -1,19 +1,23 @@
 import React from 'react';
 import './App.css';
-import {ToastContainer} from "react-toastify";
-import NgoOverview from "./components/NgoOverview";
-import useNgos from "./hooks/useNgos";
+import "@fontsource/raleway/800.css";
+import "@fontsource/roboto/";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ForNgos from "./pages/ForNgos";
 
 function App() {
 
-  const {ngos, addNgo, updateNgo, deleteNgo} = useNgos()
-
   return (
-    <div className="App">
-      <ToastContainer/>
-      <NgoOverview ngos={ngos} addNgo={addNgo} updateNgo={updateNgo} deleteNgo={deleteNgo}/>
-    </div>
-  );
+      <BrowserRouter>
+          <Routes>
+              <Route path ={"/"} element={<Home />}/>
+              <Route path={"/about"} element={<About/>}/>
+              <Route path={"/forngos"} element={<ForNgos/>}/>
+          </Routes>
+      </BrowserRouter>
+  )
 }
 
 export default App;

@@ -1,19 +1,25 @@
 import {Ngo} from "../model/Ngo";
 import NgoCard from "./NgoCard";
+import React, {ChangeEvent, useState} from "react";
+import "./components-css/NgoOverview.css";
 
 type NgoOverviewProps = {
     ngos : Ngo[]
-    addNgo : (newNgo : Omit<Ngo, "id">) => void
-    updateNgo : (id: string, ngoToUpdate: Omit<Ngo, "id">) => void
-    deleteNgo : (id : string) => void
 }
 
-export default function NgoOverview ({ngos, addNgo, updateNgo, deleteNgo }: NgoOverviewProps) {
+export default function NgoOverview ({ngos}: NgoOverviewProps) {
+
+    const [search, setSearch] = useState<string>('')
 
     return (
         <div className={"NgoOverview"}>
-            <h2>Browse NGOs:</h2>
-            {ngos.map(ngos => <NgoCard ngo={ngos}/>)}
+            <div className={"NgoHeader"}>
+                <h1>All NGOs</h1>
+                <input type={"text"} value={search} placeholder={"Type to search ..."} onChange={(event:ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}/>
+                </div>
+                <div className={"NgoBoard"}>
+                    {ngos.filter(ngo => ngo.name.toLowerCase().includes(search.toLowerCase())).map(obj => <NgoCard ngo={obj}/>)}
+                </div>
         </div>
     )
 }
