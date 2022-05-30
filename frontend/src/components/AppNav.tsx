@@ -33,7 +33,7 @@ export default function AppNav() {
                         <Nav.Link href="/forngos">For NGOs</Nav.Link>
                     </Nav>
                     <Button variant="success">Log in</Button>
-                    <Button>Sign up</Button>
+                    <Button variant="outline-success">Sign up</Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
