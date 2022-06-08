@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import useNgos from "./hooks/useNgos";
 import ForNgos from "./pages/ForNgos";
+import NgoDetailsPage from "./pages/NgoDetailsPage";
+import AppNav from "./components/AppNav";
 
 export default function App() {
 
@@ -14,6 +16,7 @@ export default function App() {
 
   return (
       <BrowserRouter>
+          <AppNav/>
           <Routes>
               <Route path ={"/"}
                      element={<Home ngos={ngos}/>}/>
@@ -22,6 +25,10 @@ export default function App() {
               <Route path={"/forngos"}
                      element={<ForNgos
                      addNgo={addNgo}/>}/>
+              <Route path={"/ngo/:id"}
+                     element={<NgoDetailsPage
+                         updateNgo={updateNgo}
+                         deleteNgoById={deleteNgo}/>}/>
           </Routes>
       </BrowserRouter>
   )

@@ -38,24 +38,18 @@ public class NgoService {
         return ngoRepo.insert(newNgo);
     }
 
-    public Ngo updateNgoById (String id, NgoDto ngoDto) {
-        Ngo updatedNgo = ngoRepo.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("NGO with ID " + id + " was not found!"));
-        updatedNgo.setName(ngoDto.getName());
-        updatedNgo.setEmail(ngoDto.getEmail());
-        updatedNgo.setUrl(ngoDto.getUrl());
-        updatedNgo.setTagline(ngoDto.getTagline());
-        updatedNgo.setDescription(ngoDto.getDescription());
-        updatedNgo.setSdg(ngoDto.getSdg());
-        updatedNgo.setImage(ngoDto.getImage());
-        updatedNgo.setCity(ngoDto.getCity());
-        updatedNgo.setCountry(ngoDto.getCountry());
-        updatedNgo.setRegion(ngoDto.getRegion());
+    public Ngo getNgoById(String id) {
+        return ngoRepo.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("NGO not found"));
+    }
+
+    public Ngo updateNgoById(Ngo updatedNgo) {
         return ngoRepo.save(updatedNgo);
     }
 
     public void deleteNgoById(String id) {
         ngoRepo.deleteById(id);
     }
+
 }
 

@@ -30,12 +30,17 @@ public class NgoController {
         return ngoService.addNewNgo(ngoDto);
     }
 
-    @PutMapping(path="{id}")
-    public Ngo updateNgoById(@PathVariable String id, @RequestBody NgoDto ngoDto) {
-        return ngoService.updateNgoById(id, ngoDto);
+    @GetMapping("{id}")
+    public Ngo getNgoById(@PathVariable String id) {
+        return ngoService.getNgoById(id);
     }
 
-    @DeleteMapping(path="{id}")
+    @PutMapping()
+    public Ngo updateNgoById(@RequestBody Ngo updatedNgo) {
+        return ngoService.updateNgoById(updatedNgo);
+    }
+
+    @DeleteMapping("{id}")
     public void deleteNgoById(@PathVariable String id) {
         ngoService.deleteNgoById(id);
     }
