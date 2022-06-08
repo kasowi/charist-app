@@ -1,0 +1,17 @@
+.ngo-details {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.details-tabs ul > li > a {
+    color: #1A281F;
+}
+
+.details-tabs ul > li > a:hover {
+    color: #008037;
+}

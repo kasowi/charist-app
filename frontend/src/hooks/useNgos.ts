@@ -27,8 +27,8 @@ export default function useNgos() {
             .catch(() => toast.error("Could not remove NGO. Please try again."))
     }
 
-    const updateNgo = (id: string, ngoToUpdate: Omit<Ngo, "id">) => {
-        return putNgo(id, ngoToUpdate)
+    const updateNgo = (ngoToUpdate: Ngo) => {
+        return putNgo(ngoToUpdate)
             .then(updatedNgo => {
                 setNgos(ngos.map(singleNgo => singleNgo.id === updatedNgo.id? updatedNgo: singleNgo))
                 toast.success("NGO "+ updatedNgo.name + " successfully updated.")

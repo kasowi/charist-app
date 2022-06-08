@@ -10,27 +10,20 @@ type NgoOverviewProps = {
 
 export default function NgoOverview ({ngos}: NgoOverviewProps) {
 
-    const [search, setSearch] = useState<string>('');
-    const [region, setRegion] = useState<string>('all');
-    const [filteredByRegion, setFilteredByRegion] = useState<Ngo[]>(ngos);
-
-    const regionFilter = (event:ChangeEvent<HTMLSelectElement>) => {
-        setRegion(event.target.value)
-        setFilteredByRegion(ngos.filter(ngo => ngo.region.toLowerCase() == region.toLowerCase()));
-        console.log(filteredByRegion)
-    }
+    const [searchName, setSearchName] = useState<string>('');
 
     return (
         <div className={"NgoOverview"}>
             <div className={"NgoTabFilter"}>
                 <Tabs>
-                    <Tab eventKey="all" title="All">
+                    <Tab eventKey="all"
+                         title="All">
                         <div className={"NgoHeader"}>
                             <h1>All NGOs</h1>
-                            <input type={"text"} value={search} placeholder={"Type to search ..."} onChange={(event:ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}/>
+                            <input type={"text"} value={searchName} placeholder={"Type to search ..."} onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
                         </div>
                         <div className={"NgoBoard"}>
-                            {ngos.filter(ngo => ngo.name.toLowerCase().includes(search.toLowerCase())).map(obj => <NgoCard ngo={obj}/>)}
+                            {ngos.filter(ngo => ngo.name.toLowerCase().includes(searchName.toLowerCase())).map(obj => <NgoCard ngo={obj}/>)}
                         </div>
                     </Tab>
                     <Tab eventKey="africa" title="Africa">
@@ -53,4 +46,3 @@ export default function NgoOverview ({ngos}: NgoOverviewProps) {
         </div>
     )
 }
-

@@ -1,7 +1,7 @@
 import axios from "axios";
 import {Ngo} from "../model/Ngo";
 
-const NGO_API_URL = 'http://localhost:8080/api/ngos';
+const NGO_API_URL = 'http://localhost:8080/api/ngos/';
 
 export const postNgo: (newNgo: Omit<Ngo, "id">) => Promise<Ngo> = (newNgo) => {
     return axios.post(NGO_API_URL, newNgo)
@@ -18,8 +18,8 @@ export function getNgoById(id: string) {
         .then(response => response.data)
 }
 
-export const putNgo: (id: string, updatedNgo: Omit<Ngo, "id">) => Promise<Ngo> = (id, updatedNgo) => {
-    return axios.put(NGO_API_URL + id, updatedNgo)
+export const putNgo: (updatedNgo: Ngo) => Promise<Ngo> = (updatedNgo) => {
+    return axios.put(NGO_API_URL, updatedNgo)
         .then(response => response.data)
 }
 
