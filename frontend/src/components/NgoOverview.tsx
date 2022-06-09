@@ -15,31 +15,120 @@ export default function NgoOverview ({ngos}: NgoOverviewProps) {
     return (
         <div className={"NgoOverview"}>
             <div className={"NgoTabFilter"}>
-                <Tabs>
+                <Tabs defaultActiveKey={"all"}>
                     <Tab eventKey="all"
                          title="All">
                         <div className={"NgoHeader"}>
                             <h1>All NGOs</h1>
+                            <input type={"text"}
+                                   value={searchName}
+                                   placeholder={"Type to search ..."}
+                                   onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
+                        </div>
+                        <div className={"NgoBoard"}>
+                            {ngos.filter(ngo => ngo
+                                .name
+                                .toLowerCase()
+                                .includes(searchName.toLowerCase()))
+                                .map(obj => <NgoCard ngo={obj}/>)}
+                        </div>
+                    </Tab>
+                    <Tab eventKey="africa"
+                         title="Africa">
+                        <div className={"NgoHeader"}>
+                            <h1>NGOs in Africa</h1>
                             <input type={"text"} value={searchName} placeholder={"Type to search ..."} onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
                         </div>
                         <div className={"NgoBoard"}>
-                            {ngos.filter(ngo => ngo.name.toLowerCase().includes(searchName.toLowerCase())).map(obj => <NgoCard ngo={obj}/>)}
+                            {ngos.filter(ngo => ngo
+                                .region
+                                .toLowerCase()
+                                .includes("africa"))
+                                .filter(ngo => ngo
+                                    .name
+                                    .toLowerCase()
+                                    .includes(searchName.toLowerCase()))
+                                .map(obj => <NgoCard ngo={obj}/>)}
                         </div>
                     </Tab>
-                    <Tab eventKey="africa" title="Africa">
-                        <p>africa</p>
+                    <Tab eventKey="americas"
+                         title="Americas">
+                        <div className={"NgoHeader"}>
+                            <h1>NGOs in the Americas</h1>
+                            <input type={"text"} value={searchName} placeholder={"Type to search ..."} onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
+                        </div>
+                        <div className={"NgoBoard"}>
+                            {ngos.filter(ngo => ngo
+                                .region
+                                .toLowerCase()
+                                .includes("americas"))
+                                .filter(ngo => ngo
+                                    .name
+                                    .toLowerCase()
+                                    .includes(searchName.toLowerCase()))
+                                .map(obj => <NgoCard ngo={obj}/>)}
+                        </div>
                     </Tab>
-                    <Tab eventKey="americas" title="Americas">
-                        <p>americas</p>
-                    </Tab>
-                    <Tab eventKey="asia" title="Asia">
-                        <p>asia</p>
+                    <Tab eventKey="asia"
+                         title="Asia">
+                        <div className={"NgoHeader"}>
+                            <h1>NGOs in Asia</h1>
+                            <input type={"text"}
+                                   value={searchName}
+                                   placeholder={"Type to search ..."}
+                                   onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
+                        </div>
+                        <div className={"NgoBoard"}>
+                            {ngos.filter(ngo => ngo
+                                .region
+                                .toLowerCase()
+                                .includes("asia"))
+                                .filter(ngo => ngo
+                                    .name
+                                    .toLowerCase()
+                                    .includes(searchName.toLowerCase()))
+                                .map(obj => <NgoCard ngo={obj}/>)}
+                        </div>
                     </Tab>
                     <Tab eventKey="europe" title="Europe">
-                        <p>europe</p>
+                        <div className={"NgoHeader"}>
+                            <h1>NGOs in Europe</h1>
+                            <input type={"text"}
+                                   value={searchName}
+                                   placeholder={"Type to search ..."}
+                                   onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
+                        </div>
+                        <div className={"NgoBoard"}>
+                            {ngos.filter(ngo => ngo
+                                .region
+                                .toLowerCase()
+                                .includes("europe"))
+                                .filter(ngo => ngo
+                                    .name
+                                    .toLowerCase()
+                                    .includes(searchName.toLowerCase()))
+                                .map(obj => <NgoCard ngo={obj}/>)}
+                        </div>
                     </Tab>
                     <Tab eventKey="oceania" title="Oceania">
-                        <p>oceania</p>
+                        <div className={"NgoHeader"}>
+                            <h1>NGOs in Oceania</h1>
+                            <input type={"text"}
+                                   value={searchName}
+                                   placeholder={"Type to search ..."}
+                                   onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
+                        </div>
+                        <div className={"NgoBoard"}>
+                            {ngos.filter(ngo => ngo
+                                .region
+                                .toLowerCase()
+                                .includes("oceania"))
+                                .filter(ngo => ngo
+                                    .name
+                                    .toLowerCase()
+                                    .includes(searchName.toLowerCase()))
+                                .map(obj => <NgoCard ngo={obj}/>)}
+                        </div>
                     </Tab>
                 </Tabs>
             </div>
