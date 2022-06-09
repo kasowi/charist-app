@@ -14,6 +14,11 @@
     align-self: end;
 }
 
+.filterSdg {
+    font-size: small;
+    text-align: center;
+}
+
 .NgoBoard {
     display: flex;
     flex-direction: row;
