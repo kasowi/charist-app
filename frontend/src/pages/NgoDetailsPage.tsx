@@ -40,6 +40,7 @@ export default function NgoDetailsPage({updateNgo, deleteNgoById}: NgoDetailsPag
     return (
         <div className={"ngo-details"}>
             <h1>Details</h1>
+            <Button variant="light" size="sm" name={"back"} onClick={() => navigate(`/`)}>Back</Button>
             {detailedNgo &&
             <div>
                 {editingEnabled
@@ -47,7 +48,7 @@ export default function NgoDetailsPage({updateNgo, deleteNgoById}: NgoDetailsPag
                     : <ShowNgoDetails ngo={detailedNgo} toggleEditing={toggleEditing} deleteNgoById={deleteNgoById}/>}
             </div>
             }
-            <Button variant="dark" name={"back"} onClick={() => navigate(`/`)}>Back</Button>
+            <Button variant="light" size="sm" name={"back"} onClick={() => navigate(`/`)}>Back</Button>
         </div>
     )
 }
