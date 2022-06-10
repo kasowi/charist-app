@@ -5,14 +5,14 @@
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    max-width: 90%;
 }
 
 .sdg-filter-images {
     align-content: center;
-    max-width: fit-content;
 }
 
 .sdg-filter-images img {
     max-width: 5%;
-    min-width: 65px;
+    min-width: 50px;
 }

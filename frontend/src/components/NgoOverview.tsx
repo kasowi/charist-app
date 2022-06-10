@@ -43,36 +43,52 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
                                    searchName={searchName}
                                    setSearchName={setSearchName}
                                    setSdgFilter={setSdgFilter}/>
-                        <div className={"NgoBoard"}>
                             <NgoBoard ngos={ngos}
                                       regionName={"africa"}
                                       sdgFilter={sdgFilter}
                                       searchName={searchName}/>
-                        </div>
                     </Tab>
                     <Tab eventKey="americas"
                          title="Americas">
-                        <NgoHeader headline={"NGOs in the Americas"} searchName={searchName} setSearchName={setSearchName} setSdgFilter={setSdgFilter}/>
-                        <div className={"NgoBoard"}>
-                        <NgoBoard ngos={ngos} regionName={"americas"} sdgFilter={sdgFilter} searchName={searchName}/>
-                        </div>
+                        <NgoHeader headline={"NGOs in the Americas"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"americas"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="asia"
                          title="Asia">
-                        <NgoHeader headline={"NGOs in Asia"} searchName={searchName} setSearchName={setSearchName} setSdgFilter={setSdgFilter}/>
-                        <NgoBoard ngos={ngos} regionName={"asia"} sdgFilter={sdgFilter} searchName={searchName}/>
+                        <NgoHeader headline={"NGOs in Asia"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"asia"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="europe" title="Europe">
-                        <NgoHeader headline={"NGOs in Europe"} searchName={searchName} setSearchName={setSearchName} setSdgFilter={setSdgFilter}/>
-                        <div className={"NgoBoard"}>
-                        <NgoBoard ngos={ngos} regionName={"europe"} sdgFilter={sdgFilter} searchName={searchName}/>
-                        </div>
+                        <NgoHeader headline={"NGOs in Europe"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"europe"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="oceania" title="Oceania">
-                        <NgoHeader headline={"NGOs in Oceania"} searchName={searchName} setSearchName={setSearchName} setSdgFilter={setSdgFilter}/>
-                        <div className={"NgoBoard"}>
-                        <NgoBoard ngos={ngos} regionName={"oceania"} sdgFilter={sdgFilter} searchName={searchName}/>
-                        </div>
+                        <NgoHeader headline={"NGOs in Oceania"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"oceania"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                 </Tabs>
             </div>

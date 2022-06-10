@@ -14,11 +14,9 @@ export default function NgoHeader({headline, searchName, setSearchName, setSdgFi
     return (
         <div className={"header-container"}>
             <h1>{headline}</h1>
-            <div className={"filter-container"}>
-                <div className={"filters"}>
+            <div className={"filter-container d-flex justify-content-center"}>
                     <Search searchName={searchName} setSearchName={setSearchName}/>
                     <FilterNgosBySdg setSdgFilter={setSdgFilter}/>
-                </div>
             </div>
         </div>
     )

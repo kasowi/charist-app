@@ -6,16 +6,13 @@
     align-items: center;
 }
 
-.headline {
-    align-self: center;
-}
-
 .filter-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    max-width: 90%;
 }
 
 p {
