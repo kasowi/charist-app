@@ -16,9 +16,11 @@ export default function NgoCard({ngo}: ngoCardProps) {
     return <div>
         <div className={"NgoCard"}>
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={ngo.image} />
+                <div className={"img-container"}>
+                <Card.Img variant="top" src={ngo.image}/>
+                </div>
                 <Card.Body>
-                    <Card.Title><h2>{ngo.name}</h2></Card.Title>
+                    <Card.Title onClick={() => navigate(`/ngo/${ngo.id}`)}><h2>{ngo.name}</h2></Card.Title>
                     <Card.Text>
                         <div className="ngo-location">
                             <img src={location} alt=""/> {ngo.city}, {ngo.country}
@@ -30,7 +32,7 @@ export default function NgoCard({ngo}: ngoCardProps) {
                     <img src={`/sdg-images/${ngo.sdg}.png`} alt=""/>
                 </div>
                 <Card.Body>
-                    <Button variant="outline-dark" onClick={() => navigate(`/ngo/${ngo.id}`)}>Learn more ...</Button>
+                    <Button variant="light" size="sm" onClick={() => navigate(`/ngo/${ngo.id}`)}>Learn more ...</Button>
                 </Card.Body>
             </Card>
         </div>

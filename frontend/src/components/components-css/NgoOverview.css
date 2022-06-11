@@ -1,17 +1,12 @@
-.NgoHeader {
+.NgoOverview {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
 }
 
-.NgoHeader .headline {
-    align-self: center;
-}
-
-.NgoHeader .searchform {
-    align-self: end;
+.NgoTabFilter {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .NgoBoard {
@@ -52,13 +47,5 @@ h4 {
     font-family: Raleway, sans-serif;
     font-weight: bold;
     font-size: larger;
-}
-
-.NgoHeader input {
-    width: 30%;
-}
-
-.NgoTabFilter {
-    font-size: initial;
 }
 

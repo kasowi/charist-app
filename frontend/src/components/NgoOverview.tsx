@@ -1,45 +1,94 @@
 import {Ngo} from "../model/Ngo";
 import NgoCard from "./NgoCard";
-import React, {ChangeEvent, useState} from "react";
+import React, {useState} from "react";
 import "./components-css/NgoOverview.css";
 import {Tab, Tabs} from "react-bootstrap";
+import NgoBoard from "./NgoBoard";
+import NgoHeader from "./NgoHeader";
 
 type NgoOverviewProps = {
     ngos : Ngo[]
 }
 
-export default function NgoOverview ({ngos}: NgoOverviewProps) {
-
+export default function NgoOverview({ngos}: NgoOverviewProps) {
+    
     const [searchName, setSearchName] = useState<string>('');
+    const [sdgFilter, setSdgFilter] = useState<string>('');
 
     return (
         <div className={"NgoOverview"}>
             <div className={"NgoTabFilter"}>
-                <Tabs>
+                <Tabs defaultActiveKey={"all"}>
                     <Tab eventKey="all"
                          title="All">
-                        <div className={"NgoHeader"}>
-                            <h1>All NGOs</h1>
-                            <input type={"text"} value={searchName} placeholder={"Type to search ..."} onChange={(event:ChangeEvent<HTMLInputElement>) => setSearchName(event.target.value)}/>
-                        </div>
+                        <NgoHeader headline={"All NGOs"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
                         <div className={"NgoBoard"}>
-                            {ngos.filter(ngo => ngo.name.toLowerCase().includes(searchName.toLowerCase())).map(obj => <NgoCard ngo={obj}/>)}
+                            {ngos.filter(ngo => ngo
+                                .sdg
+                                .toLowerCase()
+                                .includes(sdgFilter))
+                                .filter(ngo => ngo
+                                    .name
+                                    .toLowerCase()
+                                    .includes(searchName.toLowerCase()))
+                                .map(obj => <NgoCard ngo={obj}/>)}
                         </div>
                     </Tab>
-                    <Tab eventKey="africa" title="Africa">
-                        <p>africa</p>
+                    <Tab eventKey="africa"
+                         title="Africa">
+                        <NgoHeader headline={"NGOs in Africa"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                            <NgoBoard ngos={ngos}
+                                      regionName={"africa"}
+                                      sdgFilter={sdgFilter}
+                                      searchName={searchName}/>
                     </Tab>
-                    <Tab eventKey="americas" title="Americas">
-                        <p>americas</p>
+                    <Tab eventKey="americas"
+                         title="Americas">
+                        <NgoHeader headline={"NGOs in the Americas"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"americas"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
-                    <Tab eventKey="asia" title="Asia">
-                        <p>asia</p>
+                    <Tab eventKey="asia"
+                         title="Asia">
+                        <NgoHeader headline={"NGOs in Asia"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"asia"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="europe" title="Europe">
-                        <p>europe</p>
+                        <NgoHeader headline={"NGOs in Europe"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"europe"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="oceania" title="Oceania">
-                        <p>oceania</p>
+                        <NgoHeader headline={"NGOs in Oceania"}
+                                   searchName={searchName}
+                                   setSearchName={setSearchName}
+                                   setSdgFilter={setSdgFilter}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"oceania"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                 </Tabs>
             </div>
