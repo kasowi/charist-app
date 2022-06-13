@@ -9,12 +9,17 @@ import useNgos from "./hooks/useNgos";
 import ForNgos from "./pages/ForNgos";
 import NgoDetailsPage from "./pages/NgoDetailsPage";
 import AppNav from "./components/AppNav";
+import {PayPalScriptProvider} from "@paypal/react-paypal-js";
+
 
 export default function App() {
 
     const {ngos, addNgo, updateNgo, deleteNgo} = useNgos();
 
   return (
+      <div>
+          (//TODO)
+          <PayPalScriptProvider options={{"client-id": "AQ_r8Wlh7sYBG7vbL59BzKxUyTtMXhJI-gS0u0iYgirds2gR7H0dj7GFNb6Os0U8d6fpnwFU1_aPjCnV"}}>
       <BrowserRouter>
           <AppNav/>
           <Routes>
@@ -31,6 +36,8 @@ export default function App() {
                          deleteNgoById={deleteNgo}/>}/>
           </Routes>
       </BrowserRouter>
+          </PayPalScriptProvider>
+      </div>
   )
 }
 
