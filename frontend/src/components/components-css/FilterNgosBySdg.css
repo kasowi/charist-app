@@ -15,4 +15,5 @@
 .sdg-filter-images img {
     max-width: 5%;
     min-width: 50px;
+    cursor: pointer;
 }

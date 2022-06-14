@@ -20,6 +20,7 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
             <div className={"NgoTabFilter"}>
                 <Tabs defaultActiveKey={"all"}>
                     <Tab eventKey="all"
+                         id="all"
                          title="All">
                         <NgoHeader headline={"All NGOs"}
                                    searchName={searchName}
@@ -38,6 +39,7 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
                         </div>
                     </Tab>
                     <Tab eventKey="africa"
+                         id="africa"
                          title="Africa">
                         <NgoHeader headline={"NGOs in Africa"}
                                    searchName={searchName}
@@ -49,6 +51,7 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
                                   searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="americas"
+                         id="americas"
                          title="Americas">
                         <NgoHeader headline={"NGOs in the Americas"}
                                    searchName={searchName}
@@ -60,6 +63,7 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
                                   searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="asia"
+                         id="asia"
                          title="Asia">
                         <NgoHeader headline={"NGOs in Asia"}
                                    searchName={searchName}
@@ -70,7 +74,9 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
                                   sdgFilter={sdgFilter}
                                   searchName={searchName}/>
                     </Tab>
-                    <Tab eventKey="europe" title="Europe">
+                    <Tab eventKey="europe"
+                         id="europe"
+                         title="Europe">
                         <NgoHeader headline={"NGOs in Europe"}
                                    searchName={searchName}
                                    setSearchName={setSearchName}
@@ -80,7 +86,9 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
                                   sdgFilter={sdgFilter}
                                   searchName={searchName}/>
                     </Tab>
-                    <Tab eventKey="oceania" title="Oceania">
+                    <Tab eventKey="oceania"
+                         id="oceania"
+                         title="Oceania">
                         <NgoHeader headline={"NGOs in Oceania"}
                                    searchName={searchName}
                                    setSearchName={setSearchName}

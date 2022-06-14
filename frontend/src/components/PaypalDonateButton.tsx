@@ -22,11 +22,11 @@ export function PaypalDonateButton({recipient}: PaypalDonateButtonProps) {
                         purchase_units: [
                             {
                                 amount: {
-                                    value: "2",
+                                    value: "5",
                                     breakdown: {
                                         item_total: {
                                             currency_code: "USD",
-                                            value: "2",
+                                            value: "5",
                                         },
                                     },
                                 },
@@ -35,7 +35,7 @@ export function PaypalDonateButton({recipient}: PaypalDonateButtonProps) {
                                 },
                                 items: [
                                     {
-                                        name: "donation",
+                                        name: "Donation",
                                         quantity: "1",
                                         unit_amount: {
                                             currency_code: "USD",

@@ -35,8 +35,8 @@ export default function AppNav() {
                         </NavDropdown>
                         <Nav.Link onClick={() => navigate("/forngos")}>For NGOs</Nav.Link>
                     </Nav>
-                    <Button variant="success" size="sm" onClick={() => navigate("/login")}>Log in</Button>
-                    <Button variant="outline-success" size="sm" onClick={() => navigate("/signup")}>Sign up</Button>
+                    <Button variant="success" onClick={() => navigate("/login")}>Log in</Button>
+                    <Button variant="outline-success" onClick={() => navigate("/signup")}>Sign up</Button>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

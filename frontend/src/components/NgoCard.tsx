@@ -26,7 +26,9 @@ export default function NgoCard({ngo}: ngoCardProps) {
                         <div className="ngo-location">
                             <img src={location} alt=""/> {ngo.city}, {ngo.country}
                         </div>
-                        {ngo.tagline}
+                        <div className="ngo-tagline">
+                            "{ngo.tagline}"
+                        </div>
                     </Card.Text>
                 </Card.Body>
                 <div className={"sdg-image"}>

@@ -46,6 +46,11 @@ Card.Text img {
     max-height: 15px;
 }
 
+.NgoCard .ngo-tagline {
+    font-weight: bold;
+    font-style: italic;
+}
+
 p {
     color: #1A281F;
     font-family: Roboto, sans-serif;

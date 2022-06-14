@@ -48,7 +48,7 @@ export default function ShowNgoDetails({ngo, toggleEditing, deleteNgoById}: Show
                             </Tab>
                         </Tabs>
                     <div className={"buttons"}>
-                    <Button variant="outline-success" size="sm" onClick={toggleEditing}>Edit</Button>
+                    <Button variant="outline-secondary" size="sm" onClick={toggleEditing}>Edit</Button>
                     <Button variant="outline-danger" size="sm" name={"delete"} onClick={() => {
                         deleteNgoById(ngo.id)
                         navigate(`/`)
