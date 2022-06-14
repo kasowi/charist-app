@@ -13,7 +13,7 @@ type FilterNgosBySdgProps = {
 export function FilterNgosBySdg({setSdgFilter}: FilterNgosBySdgProps) {
 
     const sdgOptions: SdgOption[] = []
-    sdgOptions.push({name: "All", value: ""})
+    sdgOptions.push({name: "all", value: ""})
 
     for (let i = 1; i < 18; i++) {
         sdgOptions.push({name: `${i}`, value: `${i}`})

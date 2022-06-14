@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.dto.NgoDto;
+import com.example.backend.model.Country;
 import com.example.backend.model.Ngo;
 import com.example.backend.service.NgoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,11 @@ public class NgoController {
     public void deleteNgoById(@PathVariable String id) {
         ngoService.deleteNgoById(id);
     }
+
+    @GetMapping("/countries")
+    public List<Country> getAllCountries() {
+        return ngoService.getAllCountries();
+    }
+
 }
 

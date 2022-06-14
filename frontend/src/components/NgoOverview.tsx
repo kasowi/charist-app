@@ -43,10 +43,10 @@ export default function NgoOverview({ngos}: NgoOverviewProps) {
                                    searchName={searchName}
                                    setSearchName={setSearchName}
                                    setSdgFilter={setSdgFilter}/>
-                            <NgoBoard ngos={ngos}
-                                      regionName={"africa"}
-                                      sdgFilter={sdgFilter}
-                                      searchName={searchName}/>
+                        <NgoBoard ngos={ngos}
+                                  regionName={"africa"}
+                                  sdgFilter={sdgFilter}
+                                  searchName={searchName}/>
                     </Tab>
                     <Tab eventKey="americas"
                          title="Americas">
