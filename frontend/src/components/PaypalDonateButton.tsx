@@ -39,7 +39,7 @@ export function PaypalDonateButton({recipient}: PaypalDonateButtonProps) {
                                         quantity: "1",
                                         unit_amount: {
                                             currency_code: "USD",
-                                            value: "2",
+                                            value: "5",
                                         },
                                         category: "DONATION",
                                     }
