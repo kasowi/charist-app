@@ -4,7 +4,6 @@ import Card from "react-bootstrap/Card";
 import {Button} from "react-bootstrap";
 import location from "./components-css/location.png";
 import {useNavigate} from "react-router-dom";
-import {PaypalDonateButton} from "./PaypalDonateButton";
 
 type ngoCardProps = {
     ngo: Ngo
@@ -35,7 +34,6 @@ export default function NgoCard({ngo}: ngoCardProps) {
                     <img src={`/sdg-images/${ngo.sdg}.png`} alt=""/>
                 </div>
                 <Card.Body>
-                    <PaypalDonateButton recipient={ngo.email}/>
                     <Button variant="light" size="sm" onClick={() => navigate(`/ngo/${ngo.id}`)}>Learn more ...</Button>
                 </Card.Body>
             </Card>

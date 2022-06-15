@@ -18,7 +18,7 @@
 }
 
 Card {
-    width: 60%;
+    min-width: 60%;
 }
 
 Card.Title {
@@ -59,6 +59,10 @@ Card.Img {
     min-width: 100px;
     max-width: 20%;
     padding: 10px;
+}
+
+Card .paypal-button-container {
+    width: 40%;
 }
 
 .NgoDetails .ngo-location {

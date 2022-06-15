@@ -1,7 +1,7 @@
 import axios from "axios";
 import {Ngo} from "../model/Ngo";
 
-const NGO_API_URL = 'http://localhost:8080/api/ngos/';
+const NGO_API_URL = "/api/ngos/";
 
 export const postNgo: (newNgo: Omit<Ngo, "id">) => Promise<Ngo> = (newNgo) => {
     return axios.post(NGO_API_URL, newNgo)

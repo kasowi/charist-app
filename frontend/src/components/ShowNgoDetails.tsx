@@ -4,6 +4,7 @@ import "./components-css/ShowNgoDetails.css";
 import location from "./components-css/location.png";
 import {Button, Tab, Tabs} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+import {PaypalDonateButton} from "./PaypalDonateButton";
 
 
 type ShowNgoDetailsProps = {
@@ -32,6 +33,9 @@ export default function ShowNgoDetails({ngo, toggleEditing, deleteNgoById}: Show
                                     </div>
                                     <h4><i>"{ngo.tagline}"</i></h4>
                                     <p>{ngo.description}</p>
+                                    <div className="paypal-button-container">
+                                    <PaypalDonateButton recipient={ngo.email}/>
+                                    </div>
                                 </Card.Text>
                             </Tab>
                             <Tab eventKey="contact" title="Contact">
