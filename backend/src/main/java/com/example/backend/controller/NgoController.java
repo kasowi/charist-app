@@ -45,12 +45,5 @@ public class NgoController {
         ngoService.deleteNgoById(id);
     }
 
-    /*
-    @GetMapping("/countries")
-    public List<Country> getAllCountries() {
-        return ngoService.getAllCountries();
-    }
-     */
-
 }
 

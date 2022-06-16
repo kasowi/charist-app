@@ -13,7 +13,6 @@ import java.util.NoSuchElementException;
 public class NgoService {
 
     private final NgoRepo ngoRepo;
-//  private final CountriesApiService countriesApiService;
 
     @Autowired
     public NgoService(NgoRepo ngoRepo) {
@@ -51,12 +50,6 @@ public class NgoService {
     public void deleteNgoById(String id) {
         ngoRepo.deleteById(id);
     }
-
-    /*
-    public List<Country> getAllCountries() {
-        return countriesApiService.retrieveCountries();
-    }
-    */
 
 }
 
