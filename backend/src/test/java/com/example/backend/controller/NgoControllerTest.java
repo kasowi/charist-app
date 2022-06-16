@@ -57,6 +57,7 @@ class NgoControllerTest {
                 (Ngo.builder().id(test2.getId()).name("New NGO 2").email("test2@mail.org").url("https://test2.com").tagline("Test 2 tagline").description("Another another NGO in the database").sdg("10").image("https://02.png").city("Hamburg").country("Germany").region("Europe").build()),
                 (Ngo.builder().id(test3.getId()).name("New NGO 3").email("test3@mail.org").url("https://test3.com").tagline("Test 3 tagline").description("Another another another NGO in the database").sdg("3").image("https://03.png").city("Hamburg").country("Germany").region("Europe").build()));
         assertEquals(expected, actual);
+
     }
 
     @Test
@@ -81,6 +82,7 @@ class NgoControllerTest {
         assertNotNull(actual.getId());
         Ngo expected = Ngo.builder().id(actual.getId()).name("New NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
         assertEquals(expected, actual);
+
     }
 
     @Test
@@ -134,6 +136,7 @@ class NgoControllerTest {
                 .region("Europe")
                 .build();
         Assertions.assertEquals(expected, actual);
+
     }
 
     @Test
@@ -165,6 +168,7 @@ class NgoControllerTest {
         //THEN
         Ngo expected = Ngo.builder().id(addedNgo.getId()).name("Another fancy NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
         assertEquals(expected, actual);
+
     }
 
     @Test
@@ -189,5 +193,6 @@ class NgoControllerTest {
 
                 //THEN
                 .expectStatus().is2xxSuccessful();
+
     }
 }
