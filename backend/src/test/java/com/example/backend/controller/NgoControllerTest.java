@@ -36,9 +36,37 @@ class NgoControllerTest {
     void getNgos_ReturnNgosInDatabase() {
 
         //GIVEN
-        Ngo test1 = Ngo.builder().name("New NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
-        Ngo test2 = Ngo.builder().name("New NGO 2").email("test2@mail.org").url("https://test2.com").tagline("Test 2 tagline").description("Another another NGO in the database").sdg("10").image("https://02.png").city("Hamburg").country("Germany").region("Europe").build();
-        Ngo test3 = Ngo.builder().name("New NGO 3").email("test3@mail.org").url("https://test3.com").tagline("Test 3 tagline").description("Another another another NGO in the database").sdg("3").image("https://03.png").city("Hamburg").country("Germany").region("Europe").build();
+        Ngo test1 = Ngo.builder().name("New NGO")
+                .email("test@mail.org")
+                .url("https://test.com")
+                .tagline("Test tagline")
+                .description("Another NGO in the database")
+                .sdg("15")
+                .image("https://01.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
+        Ngo test2 = Ngo.builder().name("New NGO 2")
+                .email("test2@mail.org")
+                .url("https://test2.com")
+                .tagline("Test 2 tagline")
+                .description("Another another NGO in the database")
+                .sdg("10")
+                .image("https://02.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
+        Ngo test3 = Ngo.builder()
+                .name("New NGO 3")
+                .email("test3@mail.org")
+                .url("https://test3.com")
+                .tagline("Test 3 tagline")
+                .description("Another another another NGO in the database")
+                .sdg("3")
+                .image("https://03.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
         ngoRepo.insert(test1);
         ngoRepo.insert(test2);
         ngoRepo.insert(test3);
@@ -53,9 +81,39 @@ class NgoControllerTest {
                 .getResponseBody();
 
         //THEN
-        List<Ngo> expected = List.of((Ngo.builder().id(test1.getId()).name("New NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build()),
-                (Ngo.builder().id(test2.getId()).name("New NGO 2").email("test2@mail.org").url("https://test2.com").tagline("Test 2 tagline").description("Another another NGO in the database").sdg("10").image("https://02.png").city("Hamburg").country("Germany").region("Europe").build()),
-                (Ngo.builder().id(test3.getId()).name("New NGO 3").email("test3@mail.org").url("https://test3.com").tagline("Test 3 tagline").description("Another another another NGO in the database").sdg("3").image("https://03.png").city("Hamburg").country("Germany").region("Europe").build()));
+        List<Ngo> expected = List.of((Ngo.builder().id(test1.getId())
+                        .name("New NGO")
+                        .email("test@mail.org")
+                        .url("https://test.com")
+                        .tagline("Test tagline")
+                        .description("Another NGO in the database")
+                        .sdg("15")
+                        .image("https://01.png")
+                        .city("Hamburg")
+                        .country("Germany")
+                        .region("Europe").build()),
+                (Ngo.builder().id(test2.getId())
+                        .name("New NGO 2")
+                        .email("test2@mail.org")
+                        .url("https://test2.com")
+                        .tagline("Test 2 tagline")
+                        .description("Another another NGO in the database")
+                        .sdg("10")
+                        .image("https://02.png")
+                        .city("Hamburg")
+                        .country("Germany")
+                        .region("Europe").build()),
+                (Ngo.builder().id(test3.getId())
+                        .name("New NGO 3")
+                        .email("test3@mail.org")
+                        .url("https://test3.com")
+                        .tagline("Test 3 tagline")
+                        .description("Another another another NGO in the database")
+                        .sdg("3")
+                        .image("https://03.png")
+                        .city("Hamburg")
+                        .country("Germany")
+                        .region("Europe").build()));
         assertEquals(expected, actual);
 
     }
@@ -64,7 +122,16 @@ class NgoControllerTest {
     void addNewNgo_ReturnAddedNgo() {
 
         //GIVEN
-        Ngo test = Ngo.builder().name("New NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
+        Ngo test = Ngo.builder().name("New NGO")
+                .email("test@mail.org")
+                .url("https://test.com")
+                .tagline("Test tagline")
+                .description("Another NGO in the database")
+                .sdg("15")
+                .image("https://01.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
 
 
         //WHEN
@@ -80,7 +147,17 @@ class NgoControllerTest {
         //THEN
         assertNotNull(actual);
         assertNotNull(actual.getId());
-        Ngo expected = Ngo.builder().id(actual.getId()).name("New NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
+        Ngo expected = Ngo.builder().id(actual.getId())
+                .name("New NGO")
+                .email("test@mail.org")
+                .url("https://test.com")
+                .tagline("Test tagline")
+                .description("Another NGO in the database")
+                .sdg("15")
+                .image("https://01.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
         assertEquals(expected, actual);
 
     }
@@ -143,7 +220,16 @@ class NgoControllerTest {
     void updateNgoById() {
 
         //GIVEN
-        Ngo test = Ngo.builder().name("New NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
+        Ngo test = Ngo.builder().name("New NGO")
+                .email("test@mail.org")
+                .url("https://test.com")
+                .tagline("Test tagline")
+                .description("Another NGO in the database")
+                .sdg("15")
+                .image("https://01.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
         Ngo addedNgo = testClient.post()
                 .uri("http://localhost:" + port + "/api/ngos")
                 .bodyValue(test)
@@ -155,7 +241,17 @@ class NgoControllerTest {
 
         //WHEN
         assertNotNull(addedNgo);
-        Ngo updatedNgo = Ngo.builder().id(addedNgo.getId()).name("Another fancy NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
+        Ngo updatedNgo = Ngo.builder().id(addedNgo.getId())
+                .name("Another fancy NGO")
+                .email("test@mail.org")
+                .url("https://test.com")
+                .tagline("Test tagline")
+                .description("Another NGO in the database")
+                .sdg("15")
+                .image("https://01.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
         Ngo actual = testClient.put()
                 .uri("http://localhost:" + port + "/api/ngos")
                 .bodyValue(updatedNgo)
@@ -166,7 +262,17 @@ class NgoControllerTest {
                 .getResponseBody();
 
         //THEN
-        Ngo expected = Ngo.builder().id(addedNgo.getId()).name("Another fancy NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
+        Ngo expected = Ngo.builder().id(addedNgo.getId())
+                .name("Another fancy NGO")
+                .email("test@mail.org")
+                .url("https://test.com")
+                .tagline("Test tagline")
+                .description("Another NGO in the database")
+                .sdg("15")
+                .image("https://01.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
         assertEquals(expected, actual);
 
     }
@@ -175,7 +281,16 @@ class NgoControllerTest {
     void deleteNgoById() {
 
         //GIVEN
-        Ngo ngo = Ngo.builder().name("New NGO").email("test@mail.org").url("https://test.com").tagline("Test tagline").description("Another NGO in the database").sdg("15").image("https://01.png").city("Hamburg").country("Germany").region("Europe").build();
+        Ngo ngo = Ngo.builder().name("New NGO")
+                .email("test@mail.org")
+                .url("https://test.com")
+                .tagline("Test tagline")
+                .description("Another NGO in the database")
+                .sdg("15")
+                .image("https://01.png")
+                .city("Hamburg")
+                .country("Germany")
+                .region("Europe").build();
         Ngo addedNgo = testClient.post()
                 .uri("http://localhost:" + port + "/api/ngos")
                 .bodyValue(ngo)
