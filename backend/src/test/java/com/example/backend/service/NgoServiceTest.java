@@ -102,8 +102,6 @@ class NgoServiceTest {
     @Test
     void deleteNgoById() {
 
-        //GIVEN
-
         //WHEN
         ngoService.deleteNgoById("22");
 
