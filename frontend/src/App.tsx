@@ -22,38 +22,39 @@ export default function App() {
 
     const {ngos, addNgo, updateNgo, deleteNgo} = useNgos();
 
-  return (
-      <div>
-          <PayPalScriptProvider options={{"client-id": "AQ_r8Wlh7sYBG7vbL59BzKxUyTtMXhJI-gS0u0iYgirds2gR7H0dj7GFNb6Os0U8d6fpnwFU1_aPjCnV"}}>
-      <BrowserRouter>
-          <AppNav/>
-          <Routes>
-              <Route path ={"/"}
-                     element={<Home ngos={ngos}/>}/>
-              <Route path={"/about"}
-                     element={<About/>}/>
-              <Route path={"/regions/africa"}
-                     element={<Africa ngos={ngos}/>}/>
-              <Route path={"/regions/americas"}
-                     element={<Americas ngos={ngos}/>}/>
-              <Route path={"/regions/asia"}
-                     element={<Asia ngos={ngos}/>}/>
-              <Route path={"/regions/europe"}
-                     element={<Europe ngos={ngos}/>}/>
-              <Route path={"/regions/oceania"}
-                     element={<Oceania ngos={ngos}/>}/>
-              <Route path={"/forngos"}
-                     element={<ForNgos
-                     addNgo={addNgo}/>}/>
-              <Route path={"/ngo/:id"}
-                     element={<NgoDetailsPage
-                         updateNgo={updateNgo}
-                         deleteNgoById={deleteNgo}/>}/>
-          </Routes>
-      </BrowserRouter>
-              <BackToTopButton/>
-          </PayPalScriptProvider>
-      </div>
-  )
+    return (
+        <div>
+            <PayPalScriptProvider
+                options={{"client-id": "AQ_r8Wlh7sYBG7vbL59BzKxUyTtMXhJI-gS0u0iYgirds2gR7H0dj7GFNb6Os0U8d6fpnwFU1_aPjCnV"}}>
+                <BrowserRouter>
+                    <AppNav/>
+                    <Routes>
+                        <Route path={"/"}
+                               element={<Home ngos={ngos}/>}/>
+                        <Route path={"/about"}
+                               element={<About/>}/>
+                        <Route path={"/regions/africa"}
+                               element={<Africa ngos={ngos}/>}/>
+                        <Route path={"/regions/americas"}
+                               element={<Americas ngos={ngos}/>}/>
+                        <Route path={"/regions/asia"}
+                               element={<Asia ngos={ngos}/>}/>
+                        <Route path={"/regions/europe"}
+                               element={<Europe ngos={ngos}/>}/>
+                        <Route path={"/regions/oceania"}
+                               element={<Oceania ngos={ngos}/>}/>
+                        <Route path={"/forngos"}
+                               element={<ForNgos
+                                   addNgo={addNgo}/>}/>
+                        <Route path={"/ngo/:id"}
+                               element={<NgoDetailsPage
+                                   updateNgo={updateNgo}
+                                   deleteNgoById={deleteNgo}/>}/>
+                    </Routes>
+                </BrowserRouter>
+                <BackToTopButton/>
+            </PayPalScriptProvider>
+        </div>
+    )
 }
 
