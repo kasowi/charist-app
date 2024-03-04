@@ -3,7 +3,7 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'charist-app-blue-sound-7617-crimson-wildflower-4992'
+app = 'charist'
 primary_region = 'ams'
 
 [build]
