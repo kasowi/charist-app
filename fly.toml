@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for charist-app on 2024-03-04T22:41:33+01:00
+# fly.toml app configuration file generated for charist-app-blue-sound-7617-crimson-wildflower-4992 on 2024-03-04T22:56:51+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'charist-app'
+app = 'charist-app-blue-sound-7617-crimson-wildflower-4992'
 primary_region = 'ams'
 
 [build]
@@ -15,3 +15,8 @@ primary_region = 'ams'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
